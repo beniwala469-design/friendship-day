@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Day</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="fireworks"></div>
+
+<div id="page1" class="container">
+
+    <h1>Happy Friendship Day ❤️</h1>
+
+    <p>Welcome to my Friendship Website</p>
+
+    <button id="startBtn">Start Journey</button>
+
+</div>
+
+<div id="page2" class="container" style="display:none;">
+
+    <h1>🤝 Friendship Begins</h1>
+
+    <p>Every friendship starts with a simple Hello.</p>
+
+    <button id="nextBtn">Next ➜</button>
+
+</div>
+
+<div id="page3" class="container" style="display:none;">
+
+    <h1>📸 Beautiful Memories</h1>
+
+    <p>Every smile, every photo, every moment makes friendship special.</p>
+
+    <img src="https://picsum.photos/350/220" alt="Memory">
+
+    <br><br>
+
+    <button id="page3Btn">Next ➜</button>
+
+</div>
+
+<div id="page4" class="container" style="display:none;">
+
+<h1>📅 Friendship Timeline</h1>
+
+<div class="timeline">
+
+<div class="step">
+<h2>😊 First Meet</h2>
+<p>The day our friendship started.</p>
+</div>
+
+<div class="step">
+<h2>🤝 Best Friends</h2>
+<p>We started trusting each other.</p>
+</div>
+
+<div class="step">
+<h2>📸 Beautiful Memories</h2>
+<p>Lots of unforgettable moments.</p>
+</div>
+
+<div class="step">
+<h2>❤️ Forever</h2>
+<p>Real friendship never ends.</p>
+</div>
+
+</div>
+
+<button id="timelineBtn">Next ➜</button>
+
+</div>
+
+<div id="page5" class="container" style="display:none;">
+
+<h1>💌 A Secret Letter</h1>
+
+<div class="envelope" id="envelope">
+    💌
+</div>
+
+<div id="letter" class="letter" style="display:none;">
+
+<h2>Dear Friend ❤️</h2>
+
+<p>
+Thank you for always being there for me.
+Real friendship is one of life's greatest gifts.
+Happy Friendship Day!
+</p>
+
+<button id="letterNextBtn">Next ➜</button>
+
+</div>
+
+</div>
+
+<div id="page6" class="container" style="display:none;">
+
+    <h1>🎁 Surprise Gift</h1>
+
+    <p>Click the Gift Box</p>
+
+    <div id="giftBox" class="gift-box">
+        🎁
+    </div>
+
+    <div id="giftMessage" style="display:none;">
+
+        <h2>❤️ Surprise ❤️</h2>
+
+        <p>
+            Thank you for being my best friend.
+            Wishing you a Happy Friendship Day!
+        </p>
+
+        <button id="finalBtn">
+            Celebrate 🎉
+        </button>
+
+    </div>
+
+</div>
+
+<div id="page7" class="container" style="display:none;">
+
+    <h1>🎮 Friendship Quiz</h1>
+
+    <p>What is the most important thing in friendship?</p>
+
+    <button class="quizBtn" onclick="checkAnswer('A')">❤️ Trust</button>
+
+    <button class="quizBtn" onclick="checkAnswer('B')">💰 Money</button>
+
+    <button class="quizBtn" onclick="checkAnswer('C')">😡 Anger</button>
+
+    <button class="quizBtn" onclick="checkAnswer('D')">📱 Mobile</button>
+
+    <h2 id="result"></h2>
+
+</div>
+
+<div id="page8" class="container" style="display:none;">
+
+    <h1>🏆 Friendship Certificate</h1>
+
+    <h2>Certificate of Best Friendship</h2>
+
+    <p>This certificate is proudly presented to</p>
+
+    <input type="text" id="friendName" placeholder="Enter Friend Name">
+
+    <button onclick="generateCertificate()">
+        Generate Certificate
+    </button>
+
+    <h2 id="certificateText"></h2>
+
+    <button id="finishBtn" style="display:none;">
+        Grand Finale 🎆
+    </button>
+
+</div>
+
+<div id="page9" class="container" style="display:none;">
+
+<h1>🎉 Happy Friendship Day 🎉</h1>
+
+<h2>❤️ Thank You ❤️</h2>
+
+<p>
+May our friendship always stay strong.<br>
+Wishing you happiness forever.
+</p>
+
+<h1 style="font-size:90px;">🎆🎉❤️🎈✨</h1>
+
+<button id="giftBtn">
+Open Surprise 🎁
+</button>
+
+</div>
+
+<div id="page10" class="container" style="display:none;">
+
+    <h1>🎁 A Surprise Gift</h1>
+
+    <div id="giftBox2" class="gift-box">
+        🎁
+    </div>
+
+    <div id="giftMessage2" style="display:none;">
+
+        <h2>❤️ A Gift For You ❤️</h2>
+
+        <p>
+            True friendship is the greatest gift.
+            Thank you for always being there.
+        </p>
+
+        <h1>🥰🌹🎉</h1>
+
+    </div>
+    <br><br>
+
+<button id="endBtn">Finish ❤️</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/dist/index.umd.js"></script>
+<script src="js/script.js"></script>
+
+
+</body>
