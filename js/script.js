@@ -4,12 +4,27 @@ let page1 = document.getElementById("page1");
 
 let page2 = document.getElementById("page2");
 
+let friendName = "";
+
 startBtn.onclick = function(){
 
-page1.style.display = "none";
+    friendName = document.getElementById("userName").value.trim();
 
-page2.style.display = "block";
+    if(friendName === ""){
+        alert("Please enter your friend's name ❤️");
+        return;
+    }
 
+    document.querySelector("#page2 h1").innerHTML =
+        "🤝 Friendship Begins, " + friendName;
+
+    document.getElementById("letterTitle").innerHTML =
+        "Dear " + friendName + " ❤️";
+
+    page1.style.display = "none";
+    page2.style.display = "block";
+
+    bgMusic.play().catch(() => {});
 }
 
 let nextBtn = document.getElementById("nextBtn");
@@ -164,7 +179,7 @@ function checkAnswer(answer){
 
 function generateCertificate() {
 
-    let name = document.getElementById("friendName").value;
+    let name = friendName;
 
     document.getElementById("certificateText").innerHTML =
     "🏆 Congratulations <br><br><b>" + name +
@@ -224,3 +239,104 @@ endBtn.onclick = function(){
     alert("❤️ Happy Friendship Day ❤️\n\nThank you for visiting my website!");
 
 }
+
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.innerHTML = "⏸ Pause";
+    } else {
+        bgMusic.pause();
+        musicBtn.innerHTML = "🎵 Music";
+    }
+});
+
+const heartsContainer = document.getElementById("hearts");
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    const hearts = ["❤️","💖","💕","💗","💓"];
+
+    heart.innerHTML = hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.fontSize = (20 + Math.random()*25) + "px";
+
+    heart.style.animationDuration = (4 + Math.random()*4) + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },8000);
+
+}
+
+setInterval(createHeart,500);
+
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.onclick = function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        themeBtn.innerHTML = "☀️ Light Mode";
+    }else{
+        themeBtn.innerHTML = "🌙 Dark Mode";
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    setTimeout(function () {
+
+        const loader = document.getElementById("loader");
+
+        if (loader) {
+            loader.style.display = "none";
+        }
+
+    }, 3000);
+
+});
+
+const downloadBtn = document.getElementById("downloadBtn");
+
+downloadBtn.onclick = function(){
+
+    html2canvas(document.getElementById("page8")).then(function(canvas){
+
+        const link = document.createElement("a");
+
+        link.download = "Friendship_Certificate.png";
+
+        link.href = canvas.toDataURL();
+
+        link.click();
+
+    });
+
+}
+
+
+
+
+
+window.addEventListener("load", function () {
+
+    const loader = document.getElementById("loader");
+
+    if (loader) {
+        loader.style.display = "none";
+    }
+
+});

@@ -10,15 +10,26 @@
 
 <body>
 
+<div id="loader">
+    <div class="spinner"></div>
+    <h2>Loading Friendship Day...</h2>
+</div>    
+
+<div id="hearts"></div>    
+
 <div id="fireworks"></div>
 
 <div id="page1" class="container">
 
     <h1>Happy Friendship Day ❤️</h1>
 
+    <input type="text" id="userName" placeholder="Enter Your Friend's Name">
+
+    <button id="startBtn">Start Journey ❤️</button>
+
     <p>Welcome to my Friendship Website</p>
 
-    <button id="startBtn">Start Journey</button>
+    
 
 </div>
 
@@ -88,7 +99,7 @@
 
 <div id="letter" class="letter" style="display:none;">
 
-<h2>Dear Friend ❤️</h2>
+<h2 id="letterTitle">Dear Friend ❤️</h2>
 
 <p>
 Thank you for always being there for me.
@@ -163,6 +174,8 @@ Happy Friendship Day!
 
     <h2 id="certificateText"></h2>
 
+    <button id="downloadBtn">📥 Download Certificate</button>
+
     <button id="finishBtn" style="display:none;">
         Grand Finale 🎆
     </button>
@@ -214,9 +227,17 @@ Open Surprise 🎁
 
 </div>
 
+<audio id="bgMusic" loop>
+    <source src="music/music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">🎵 Music</button>
+
+<button id="themeBtn">🌙 Dark Mode</button>
+
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.7/dist/index.umd.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script src="js/script.js"></script>
-
 
 </body>
